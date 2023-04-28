@@ -42,7 +42,7 @@ npm test'''
     stage('Docker-build') {
       steps {
         script {
-          docker.build("${registry}:${env.BUILD_ID}")
+          def customImage = docker.build("${registry}:${env.BUILD_ID}")
         }
 
       }
