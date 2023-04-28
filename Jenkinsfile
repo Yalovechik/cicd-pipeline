@@ -48,6 +48,15 @@ npm test'''
       }
     }
 
+    stage('Docker-Push') {
+      steps {
+        script {
+          customImage.push("latest")
+        }
+
+      }
+    }
+
   }
   environment {
     registry = 'yalovechik/test'
