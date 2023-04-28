@@ -39,6 +39,15 @@ npm test'''
       }
     }
 
+    stage('Docker-build') {
+      steps {
+        script {
+          def customImage = docker.build("${registry}:${env.BUILD_ID}")
+        }
+
+      }
+    }
+
   }
   environment {
     registry = 'yalovechik/test'
