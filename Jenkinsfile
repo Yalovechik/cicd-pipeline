@@ -43,7 +43,15 @@ npm test'''
       steps {
         script {
           docker.build("${registry}:${env.BUILD_ID}")
+        }
 
+      }
+    }
+
+    stage('Docker-push') {
+      steps {
+        script {
+          yalovechik/test.push('latest')
         }
 
       }
