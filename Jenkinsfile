@@ -50,10 +50,7 @@ npm test'''
 
     stage('Docker-push') {
       steps {
-        script {
-          yalovechik/test.push('latest')
-        }
-
+        sh 'sh "docker push $registry:latest"'
       }
     }
 
