@@ -51,8 +51,7 @@ npm test'''
     stage('Docker-push') {
       steps {
         script {
-          docker.push("${env.BUILD_NUMBER}")
-
+          docker.image("${registry}:${env.BUILD_ID}").push('latest')
         }
 
       }
