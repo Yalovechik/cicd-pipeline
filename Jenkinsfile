@@ -43,14 +43,6 @@ npm test'''
       steps {
         script {
           def customImage = docker.build("${registry}:${env.BUILD_ID}")
-        }
-
-      }
-    }
-
-    stage('Docker-Push') {
-      steps {
-        script {
           customImage.push("latest")
         }
 
