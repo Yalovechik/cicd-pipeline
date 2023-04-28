@@ -51,6 +51,11 @@ npm test'''
     stage('Docker-push') {
       steps {
         sh 'sh "docker push $registry:latest"'
+        script {
+          docker.push("${env.BUILD_NUMBER}")
+          docker.push("latest")
+        }
+
       }
     }
 
